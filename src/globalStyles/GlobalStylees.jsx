@@ -7,8 +7,11 @@ export const GlobalStyles = createGlobalStyle`
     src: url('../assets/fonts/POPPINS-REGULAR.TTF');
     
   }
-
+  ::-webkit-scrollbar {
+    display:none;
+  }
     body {
+        
         font-family: 'Poppins';
         margin:0px;
         padding:0px;

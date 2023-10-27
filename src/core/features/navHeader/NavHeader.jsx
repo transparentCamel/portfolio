@@ -1,20 +1,35 @@
 import React from 'react';
 import { NavHeaderStyles } from './NavHeader.styles';
+import { Link } from 'react-scroll';
+import { animateScroll as scroll } from 'react-scroll';
 
 export default function NavHeader() {
+  const scrollToTop = () => {
+    scroll.scrollToTop({
+      duration: 800,
+      smooth: 'easeInOutQuart',
+    });
+  };
+
   return (
     <NavHeaderStyles>
-      <h2>arvii.dev</h2>
+      <h2 onClick={scrollToTop}>arvii.dev</h2>
       <nav>
         <ul>
           <li>
-            <a href=''>About</a>
+            <Link to='about' smooth={true} duration={800}>
+              About
+            </Link>
           </li>
           <li>
-            <a href=''>Projects</a>
+            <Link to='projects' smooth={true} duration={800}>
+              Projects
+            </Link>
           </li>
           <li>
-            <a href=''>Contact</a>
+            <Link to='contacts' smooth={true} duration={800}>
+              Contacts
+            </Link>
           </li>
         </ul>
       </nav>

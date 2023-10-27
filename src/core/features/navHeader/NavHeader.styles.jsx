@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
 export const NavHeaderStyles = styled.header`
+  position: sticky;
+  top: 0;
+  background-color: #ffff;
   z-index: 9999;
   display: flex;
   flex-direction: row;
@@ -31,10 +34,10 @@ export const NavHeaderStyles = styled.header`
           font-size: 18px;
           font-weight: 640;
           text-decoration: none;
-          color: inherit;
-
+          transition: color 0.3s;
           &:hover {
             color: #264de4;
+            cursor: pointer;
           }
         }
       }
