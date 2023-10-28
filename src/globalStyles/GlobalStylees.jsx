@@ -10,8 +10,7 @@ export const GlobalStyles = createGlobalStyle`
   ::-webkit-scrollbar {
     display:none;
   }
-    body {
-        
+    body {        
         font-family: 'Poppins';
         margin:0px;
         padding:0px;
