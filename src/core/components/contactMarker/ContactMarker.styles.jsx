@@ -22,6 +22,7 @@ export const ContactMarkerStyles = styled.div`
       background-color: #ffff;
 
       img {
+        width: 32px;
       }
     }
     .contactTextContainer {

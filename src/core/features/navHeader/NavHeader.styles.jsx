@@ -96,7 +96,7 @@ export const NavHeaderStyles = styled.header`
     }
 
     @media screen and (max-width: 800px) {
-      position: absolute;
+      position: fixed;
       background-color: #ffff;
       width: 100%;
       left: 0px;
