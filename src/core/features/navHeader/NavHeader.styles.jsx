@@ -7,7 +7,7 @@ export const NavHeaderStyles = styled.header`
   z-index: 9999;
   display: flex;
   flex-direction: row;
-  padding: 8px 64px;
+  padding: 0px 64px;
   user-select: none;
   box-shadow: 0px 4px 8px #e5e4e2;
 
@@ -99,9 +99,10 @@ export const NavHeaderStyles = styled.header`
       position: fixed;
       background-color: #ffff;
       width: 100%;
+      top: 85px;
       left: 0px;
       justify-content: center;
-      transition: transform 0.6s ease;
+      transition: left 0.6s ease;
       box-shadow: 0px 4px 8px #e5e4e2;
 
       ul {
@@ -118,10 +119,10 @@ export const NavHeaderStyles = styled.header`
   }
   @media screen and (max-width: 800px) {
     .open {
-      transform: translateY(83px);
+      top: 85px;
     }
     .closed {
-      transform: translateX(100%) translateY(83px);
+      left: 1000px;
     }
   }
 `;

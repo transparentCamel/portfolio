@@ -18,24 +18,25 @@ export default function ProjectsSection() {
           heading={'CAR SERVICES'}
           headingSmall={'(Desktop only)'}
           icon={carSvg}
-          showLiveDemo={'true'}
+          showLiveDemo={true}
           paragraph={
             'Car Services website is a static platform meticulously created to mirror the exact specifications outlined in the provided Figma design.'
           }
-          link={'https://github.com/transparentCamel/carShop'}
+          linkGit={'https://github.com/transparentCamel/carShop'}
+          linkSite={'https://acar-services.netlify.app/'}
         />
         <ProjectCard
           imgSrc={kryptoniteImg}
           heading={'KRYPTONITE'}
           headingSmall={'(2023 September)'}
           icon={diamondSvg}
-          showLiveDemo={'true'}
+          showLiveDemo={false}
           paragraph={
             'This website enables real-time cryptocurrency price tracking, graph generation, and MongoDB data logging for user-selected cryptocurrencies.'
           }
           imgPosition={'right'}
           showNode={true}
-          link={'https://github.com/transparentCamel/Kryptonite'}
+          linkGit={'https://github.com/transparentCamel/Kryptonite'}
         />
         <ProjectCard
           imgSrc={registrationAppImg}
@@ -47,7 +48,7 @@ export default function ProjectsSection() {
             'This app leverages MongoDB for registration, supports admin login with validation, and offers event creation and management features.'
           }
           showNode={true}
-          link={'https://github.com/transparentCamel/registration-app'}
+          linkGit={'https://github.com/transparentCamel/registration-app'}
         />
       </div>
     </ProjectSectionStyles>
