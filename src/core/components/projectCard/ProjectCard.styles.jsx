@@ -18,16 +18,15 @@ export const ProjectCardStyles = styled.div`
     border-radius: 16px;
     box-shadow: 0px 0px 8px #e5e4e2;
     flex: 1;
+    cursor: none;
 
     img {
       width: 100%;
       object-fit: cover;
       position: relative;
-      transform: translateY(0);
       transition: transform 6s ease;
-
       &:hover {
-        transform: translateY(calc(-100% + 344px));
+        transform: translateY(-84%);
       }
     }
   }
@@ -51,6 +50,14 @@ export const ProjectCardStyles = styled.div`
       img {
         width: 16px;
       }
+      @media screen and (max-width: 440px) {
+        flex-direction: column;
+        margin-bottom: 8px;
+        h3,
+        p {
+          margin: 0px;
+        }
+      }
     }
   }
   .technologyContainer {
@@ -63,6 +70,9 @@ export const ProjectCardStyles = styled.div`
       padding: 16px;
       box-shadow: 0px 0px 8px #e5e4e2;
       border-radius: 16px;
+    }
+    @media screen and (max-width: 600px) {
+      flex-wrap: wrap;
     }
   }
   .paragraph {
@@ -84,12 +94,14 @@ export const ProjectCardStyles = styled.div`
       transition: transform 0.3s;
       transform: scale(1.2);
     }
-    span {
+    a {
       display: flex;
       gap: 8px;
       cursor: pointer;
+      color: #2d2e32;
+      text-decoration: none;
 
-      a {
+      p {
         font-weight: 600;
       }
       img {

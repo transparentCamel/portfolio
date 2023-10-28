@@ -32,5 +32,15 @@ export const ContactMarkerStyles = styled.div`
         margin: 0px;
       }
     }
+    @media screen and (max-width: 800px) {
+      flex-direction: column;
+
+      .contactTextContainer {
+        h4,
+        p {
+          text-align: center;
+        }
+      }
+    }
   }
 `;

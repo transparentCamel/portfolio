@@ -22,6 +22,7 @@ export default function ProjectsSection() {
           paragraph={
             'Car Services website is a static platform meticulously created to mirror the exact specifications outlined in the provided Figma design.'
           }
+          link={'https://github.com/transparentCamel/carShop'}
         />
         <ProjectCard
           imgSrc={kryptoniteImg}
@@ -34,6 +35,7 @@ export default function ProjectsSection() {
           }
           imgPosition={'right'}
           showNode={true}
+          link={'https://github.com/transparentCamel/Kryptonite'}
         />
         <ProjectCard
           imgSrc={registrationAppImg}
@@ -45,6 +47,7 @@ export default function ProjectsSection() {
             'This app leverages MongoDB for registration, supports admin login with validation, and offers event creation and management features.'
           }
           showNode={true}
+          link={'https://github.com/transparentCamel/registration-app'}
         />
       </div>
     </ProjectSectionStyles>

@@ -16,13 +16,11 @@ export default function Contact() {
           svg={mapLocationSvg}
           header={'Location'}
           text={'Vilnius, Lithuania'}
-          showText={true}
         />
         <ContactMarker
           svg={mailSvg}
           header={'Mail'}
           text={'arvydas.peciulis23@gmail.com'}
-          showText={true}
           email={'arvydas.peciulis23@gmail.com'}
         />
       </div>

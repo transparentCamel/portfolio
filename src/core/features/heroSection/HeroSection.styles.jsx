@@ -13,6 +13,9 @@ export const HeroSectionStyles = styled.section`
   @media screen and (max-width: 800px) {
     padding: 128px 8%;
   }
+  @media screen and (max-width: 600px) {
+    padding: 64px 8%;
+  }
 
   div {
     display: flex;

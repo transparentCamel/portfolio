@@ -1,7 +1,7 @@
 import React from 'react';
 import { ContactMarkerStyles } from './ContactMarker.styles';
 
-export default function ContactMarker({ svg, header, text, showText, email }) {
+export default function ContactMarker({ svg, header, text, email }) {
   const handleLinkClick = (e) => {
     e.preventDefault();
     if (email) {
@@ -14,12 +14,11 @@ export default function ContactMarker({ svg, header, text, showText, email }) {
         <span className='svgBubble'>
           <img src={svg} alt='Svg' />
         </span>
-        {showText && (
-          <span className='contactTextContainer'>
-            <h4>{header}</h4>
-            <p>{text}</p>
-          </span>
-        )}
+
+        <span className='contactTextContainer'>
+          <h4>{header}</h4>
+          <p>{text}</p>
+        </span>
       </a>
     </ContactMarkerStyles>
   );

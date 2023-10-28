@@ -16,6 +16,9 @@ export const ContactStyles = styled.section`
   @media screen and (max-width: 800px) {
     padding: 128px 8%;
   }
+  @media screen and (max-width: 600px) {
+    padding: 64px 8%;
+  }
   h2,
   h3 {
     margin: 0px;
@@ -35,6 +38,7 @@ export const ContactStyles = styled.section`
     @media screen and (max-width: 800px) {
       justify-content: center;
       flex-direction: column;
+      gap: 32px;
     }
   }
   .contactIconsContainer {
