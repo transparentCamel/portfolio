@@ -12,7 +12,7 @@ export const ProjectCardStyles = styled.div`
 
   .cardImgContainer {
     width: 50%;
-    height: 344px;
+    max-height: 256px;
     overflow: hidden;
     position: relative;
     border-radius: 16px;
@@ -26,7 +26,10 @@ export const ProjectCardStyles = styled.div`
       position: relative;
       transition: transform 6s ease;
       &:hover {
-        transform: translateY(-84%);
+        transform: translateY(-80%);
+        @media screen and (max-width: 800px) {
+          transform: translateY(-60%);
+        }
       }
     }
   }
