@@ -1,36 +1,49 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavHeaderStyles } from './NavHeader.styles';
 import { Link } from 'react-scroll';
 import { animateScroll as scroll } from 'react-scroll';
 
 export default function NavHeader() {
+  const [isHamburgerClicked, setIsHamburgerClicked] = useState(false);
+
   const scrollToTop = () => {
+    setIsHamburgerClicked(false);
     scroll.scrollToTop({
       duration: 800,
       smooth: 'easeInOutQuart',
     });
   };
 
+  const toggleHamburger = () => {
+    setIsHamburgerClicked(!isHamburgerClicked);
+  };
+
+  const closeMenu = () => {
+    setIsHamburgerClicked(false);
+  };
+
   return (
     <NavHeaderStyles>
       <h2 onClick={scrollToTop}>arvii.dev</h2>
-      <nav>
+      <span
+        className={`hamburger ${isHamburgerClicked ? 'active' : ''}`}
+        onClick={toggleHamburger}
+      >
+        <div></div>
+        <div></div>
+        <div></div>
+      </span>
+      <nav className={isHamburgerClicked ? 'open' : 'closed'}>
         <ul>
-          <li>
-            <Link to='about' smooth={true} duration={800}>
-              About
-            </Link>
-          </li>
-          <li>
-            <Link to='projects' smooth={true} duration={800}>
-              Projects
-            </Link>
-          </li>
-          <li>
-            <Link to='contacts' smooth={true} duration={800}>
-              Contacts
-            </Link>
-          </li>
+          <Link to='about' smooth={true} duration={800} onClick={closeMenu}>
+            <li>About</li>
+          </Link>
+          <Link to='projects' smooth={true} duration={800} onClick={closeMenu}>
+            <li>Projects</li>
+          </Link>
+          <Link to='contacts' smooth={true} duration={800} onClick={closeMenu}>
+            <li>Contacts</li>
+          </Link>
         </ul>
       </nav>
     </NavHeaderStyles>

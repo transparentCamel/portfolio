@@ -11,6 +11,7 @@ export default function ProjectCard({
   imgSrc,
   imgPosition,
   showNode,
+  link,
 }) {
   return (
     <ProjectCardStyles>
@@ -32,15 +33,15 @@ export default function ProjectCard({
           {showNode && <div>Node.js</div>}
         </div>
         <div className='linksContainer'>
-          <span>
-            <a>Code</a>
+          <a href={link} target='_blank'>
+            <p>Code</p>
             <img src={githubSvgRound} alt='Github Svg' />
-          </span>
+          </a>
           {showLiveDemo && (
-            <span>
-              <a>Live Demo</a>
+            <a>
+              <p>Live Demo</p>
               <img src={eyeSvg} alt='Eye Svg' />
-            </span>
+            </a>
           )}
         </div>
       </div>
