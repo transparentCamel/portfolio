@@ -10,15 +10,17 @@ export const GlobalStyles = createGlobalStyle`
   ::-webkit-scrollbar {
     display:none;
   }
-    body {       
+
+    body {    
       font-family: 'Poppins', Arial, sans-serif;
-        margin:0px;
-        padding:0px;
-        color:#2d2e32;
-        
+      margin:0px;
+      padding:0px;
+      color:#2d2e32;
         #root {
             display:flex;
             flex-direction:column;
         }
     }
+}
+    
 `;

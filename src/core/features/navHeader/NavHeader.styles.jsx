@@ -19,12 +19,10 @@ export const NavHeaderStyles = styled.header`
     margin-left: auto;
     cursor: pointer;
     transition: background-color 0.2s;
-
-    &:hover {
-      div {
-        background-color: #264de4;
-      }
-    }
+    padding: 0px 16px;
+    -webkit-tap-highlight-color: transparent;
+    tap-highlight-color: transparent;
+    outline: none;
 
     div {
       height: 4px;
@@ -54,11 +52,14 @@ export const NavHeaderStyles = styled.header`
   }
 
   @media screen and (max-width: 800px) {
-    padding: 8px 32px;
+    padding: 8px 16px 8px 32px;
   }
 
   h2 {
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    tap-highlight-color: transparent;
+    outline: none;
   }
 
   nav {
@@ -102,7 +103,7 @@ export const NavHeaderStyles = styled.header`
       top: 85px;
       left: 0px;
       justify-content: center;
-      transition: left 0.6s ease;
+      transition: left 0.4s ease;
       box-shadow: 0px 4px 8px #e5e4e2;
 
       ul {
@@ -122,7 +123,7 @@ export const NavHeaderStyles = styled.header`
       top: 85px;
     }
     .closed {
-      left: 1000px;
+      left: 800px;
     }
   }
 `;
