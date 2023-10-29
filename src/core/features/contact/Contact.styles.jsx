@@ -45,6 +45,9 @@ export const ContactStyles = styled.section`
     display: flex;
     gap: 32px;
     a {
+      -webkit-tap-highlight-color: transparent;
+      tap-highlight-color: transparent;
+      outline: none;
       img {
         width: 32px;
       }

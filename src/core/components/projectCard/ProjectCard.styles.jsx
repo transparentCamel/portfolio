@@ -103,6 +103,9 @@ export const ProjectCardStyles = styled.div`
       cursor: pointer;
       color: #2d2e32;
       text-decoration: none;
+      -webkit-tap-highlight-color: transparent; /* For webkit-based browsers */
+      tap-highlight-color: transparent; /* For non-webkit browsers */
+      outline: none;
 
       p {
         font-weight: 600;

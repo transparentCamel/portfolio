@@ -69,6 +69,9 @@ export const HeroSectionStyles = styled.section`
         display: flex;
         gap: 16px;
         align-items: center;
+        -webkit-tap-highlight-color: transparent;
+        tap-highlight-color: transparent;
+        outline: none;
 
         a {
           display: flex;

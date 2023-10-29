@@ -2,6 +2,9 @@ import styled from 'styled-components';
 
 export const ContactMarkerStyles = styled.div`
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  tap-highlight-color: transparent;
+  outline: none;
 
   a {
     display: flex;
@@ -10,6 +13,7 @@ export const ContactMarkerStyles = styled.div`
     justify-content: center;
     text-decoration: none;
     color: #ffff;
+
     .svgBubble {
       display: flex;
       align-items: center;
