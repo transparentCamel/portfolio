@@ -9,12 +9,13 @@ import sass from '../../../assets/svg/sass.svg';
 import react from '../../../assets/svg/react.svg';
 import node from '../../../assets/svg/node.svg';
 import location from '../../../assets/svg/location.svg';
+import tailwindIcon from '../../../assets/svg/tailwind-css.svg';
 export default function HeroSection() {
   return (
     <HeroSectionStyles>
       <div>
         <div className='textContainer'>
-          <h1>Front-End React Developer</h1>
+          <h1>Front-End Developer</h1>
           <span className='locationContainer'>
             <p>Vilnius, Lithuania</p>
             <img src={location} alt='Location pin svg' />
@@ -51,13 +52,16 @@ export default function HeroSection() {
             <img src={cssLogo} alt='CSS3 Logo' />
           </li>
           <li>
-            <img src={sass} alt='Sass Logo' />
-          </li>
-          <li>
             <img src={react} alt='React Logo' />
           </li>
           <li>
             <img src={node} alt='Node Logo' />
+          </li>
+          <li>
+            <img src={tailwindIcon} alt='Tailwind Logo' />
+          </li>
+          <li>
+            <img src={sass} alt='Sass Logo' />
           </li>
         </ul>
       </div>

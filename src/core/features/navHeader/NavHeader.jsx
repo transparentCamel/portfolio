@@ -26,7 +26,7 @@ export default function NavHeader() {
     <NavHeaderStyles
       className={isHamburgerClicked ? 'openHeader' : 'closedHeader'}
     >
-      <h2 onClick={scrollToTop}>arvii.dev</h2>
+      <h2 onClick={scrollToTop}>arvii.web</h2>
       <span
         className={`hamburger ${isHamburgerClicked ? 'active' : ''}`}
         onClick={toggleHamburger}
