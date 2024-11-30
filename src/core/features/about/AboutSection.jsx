@@ -13,11 +13,11 @@ export default function AboutSection() {
         <h3>ABOUT ME</h3>
         <h2>A passionate Front-End Developer based in Vilnius, Lithuania</h2>
         <p>
-          Motivated 4th year Computer Science student with a passion for
-          Front-End development and a strong desire to work in an innovative
-          environment. Completed Code Academy advanced Front-End courses with
-          highest grades! Eager to apply and expand my skills in a challenging
-          role that fosters continuous learning and creative problem-solving.
+          Creative Multimedia and Computer Design graduate from Vilnius Tech
+          with a passion for Front-End development. Top of the class student
+          graduated from advanced (440h) Front-End courses at Code Academy.
+          Eager to apply and expand my skills in a challenging role that fosters
+          continuous learning and creative problem-solving.
         </p>
         <div className='educationContainer'>
           <h2 id='educationHeader'>Education</h2>
