@@ -1,17 +1,17 @@
 import styled from 'styled-components';
 
 export const HeroSectionStyles = styled.section`
-  padding: 128px 24%;
+  padding: 96px 24%;
   background-color: #f5f5f5;
 
   @media screen and (max-width: 1740px) {
-    padding: 128px 16%;
+    padding: 96px 20%;
   }
   @media screen and (max-width: 1366px) {
-    padding: 128px 12%;
+    padding: 96px 16%;
   }
   @media screen and (max-width: 800px) {
-    padding: 128px 8%;
+    padding: 96px 12%;
   }
   @media screen and (max-width: 600px) {
     padding: 64px 8%;
@@ -32,6 +32,7 @@ export const HeroSectionStyles = styled.section`
       @media screen and (max-width: 800px) {
         width: 100%;
       }
+
       h1 {
         font-size: 64px;
         margin: 0px;
@@ -42,15 +43,28 @@ export const HeroSectionStyles = styled.section`
           text-align: center;
         }
       }
+      .paragraphBox {
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+
+        img {
+          width: 32px;
+          height: 100%;
+        }
+        :last-child {
+          transform: rotate(180deg);
+        }
+      }
       p {
         margin: 0px;
-        max-width: 512px;
-        @media screen and (max-width: 800px) {
-          text-align: center;
-        }
+        width: 100%;
+        text-align: center;
       }
       .locationContainer {
         height: 32px;
+        width: fit-content;
+
         p {
           display: flex;
           align-items: center;
@@ -75,8 +89,28 @@ export const HeroSectionStyles = styled.section`
 
         a {
           display: flex;
+          position: relative;
 
+          #linkedInHover {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            width: 48px;
+            height: 48px;
+            z-index: auto;
+            background-color: #0077b5;
+          }
+          #gitHover {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            width: 48px;
+            height: 48px;
+            z-index: auto;
+            background-color: #2dba4e;
+          }
           img {
+            z-index: 1;
             width: 64px;
             height: 64px;
           }
@@ -84,39 +118,109 @@ export const HeroSectionStyles = styled.section`
       }
     }
     .heroImageContainer {
+      display: flex;
+      flex-direction: column;
+      gap: 0px;
       width: 40%;
-      img {
+      @media screen and (max-width: 800px) {
         width: 100%;
+      }
+      .polaroidContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        #polaroid {
+          width: 60%;
+          bottom: 0px;
+          z-index: 1;
+        }
+      }
+
+      .flashContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @media screen and (max-width: 800px) {
+          width: 100%;
+        }
+        .trapezoidContainer {
+          margin-top: 32px;
+          border-radius: 100%;
+          overflow: hidden;
+          width: 60%;
+          display: flex;
+          flex-direction: row;
+          gap: 0px;
+          height: 256px;
+          .trapezoid {
+            height: 100%;
+            width: 100%;
+          }
+
+          #trapezoidOne {
+            background-color: #2ea9e0;
+            clip-path: polygon(0 0, 20% 0, 100% 100%, 80% 100%);
+          }
+
+          #trapezoidTwo {
+            background-color: #a1c935;
+            clip-path: polygon(20% 0, 40% 0, 80% 100%, 60% 100%);
+          }
+          #trapezoidThree {
+            background-color: #ffff00;
+            clip-path: polygon(40% 0, 60% 0, 60% 100%, 40% 100%);
+          }
+          #trapezoidFour {
+            background-color: #ff6201;
+            clip-path: polygon(60% 0, 80% 0, 40% 100%, 20% 100%);
+          }
+
+          #trapezoidFive {
+            background-color: #ec539f;
+            clip-path: polygon(80% 0, 100% 0%, 20% 100%, 0% 100%);
+          }
+        }
+      }
+
+      #myPhotoContainer {
+        height: 50%;
         border-radius: 32px;
         border: 4px solid #2d2e32;
-        object-fit: cover;
+        overflow: hidden;
+        img {
+          width: 100%;
+
+          object-fit: cover;
+        }
       }
     }
   }
   .skillsContainer {
-    margin-top: 32px;
+    flex-direction: column;
+    height: 100%;
     display: flex;
     align-items: center;
+    justify-items: center;
     gap: 32px;
+
     p {
-      padding: 16px 32px 16px 0px;
       font-weight: bold;
-      border-right: 2px solid #2d2e32;
-      @media screen and (max-width: 800px) {
-        border-right: none;
-        border-bottom: 2px solid #2d2e32;
-        text-align: center;
-        padding: 16px 0px 32px 0px;
-      }
+      text-align: center;
     }
+
+    #line {
+      height: 2px;
+      width: 60%;
+
+      background-color: #2d2e32;
+    }
+
     ul {
       display: flex;
-      gap: 32px;
-
-      @media screen and (max-width: 800px) {
-        justify-content: space-between;
-        flex-wrap: wrap;
-      }
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: space-between;
+      width: 100%;
     }
     ul,
     li {
