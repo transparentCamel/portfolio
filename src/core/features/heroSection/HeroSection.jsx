@@ -38,7 +38,8 @@ export default function HeroSection() {
   const [animationFinished, setAnimationFinished] = useState(false);
 
   useEffect(() => {
-    const tl = gsap.timeline({});
+    const tl = gsap.timeline();
+    gsap.registerPlugin(ScrollTrigger);
 
     gsap.set([linkWrapperRef.current, gitRef.current], {
       clipPath: 'inset(100% 0 0 0)',
@@ -65,42 +66,7 @@ export default function HeroSection() {
           ease: 'power2.out',
         }
       )
-      .fromTo(
-        polaroidRef.current,
-        {
-          opacity: 0,
-        },
-        {
-          opacity: 1,
-          duration: 1,
-        },
-        '<'
-      )
-      .fromTo(
-        myPhotoContainerRef.current,
-        {
-          opacity: 0,
-        },
-        {
-          opacity: 1,
-          duration: 1,
-        },
-        '<'
-      )
 
-      .fromTo(
-        flashRef.current,
-        {
-          opacity: 0,
-          clipPath: 'inset(100% 0 0 0)',
-        },
-        {
-          opacity: 1,
-          clipPath: 'inset(0% 0 0 0)',
-          duration: 0.5,
-          ease: 'power2.out',
-        }
-      )
       .fromTo(
         pinRef.current,
         {
@@ -133,16 +99,6 @@ export default function HeroSection() {
           duration: 0.1,
           ease: 'sine.inOut',
         }
-      )
-      .fromTo(
-        myPhotoRef.current,
-        { clipPath: 'inset(100% 0 0 0)' },
-        {
-          clipPath: 'inset(0% 0 0 0)',
-          duration: 1,
-          ease: 'power2.out',
-        },
-        '<'
       )
 
       .fromTo(
@@ -211,6 +167,18 @@ export default function HeroSection() {
         '<'
       )
       .fromTo(
+        polaroidRef.current,
+        {
+          opacity: 0,
+        },
+        {
+          opacity: 1,
+          duration: 1,
+        },
+        '<'
+      )
+
+      .fromTo(
         iconContainerRef.current,
         {
           clipPath: 'inset(0 0 100% 0)',
@@ -219,6 +187,34 @@ export default function HeroSection() {
           clipPath: 'inset(0 0 0% 0)',
           duration: 0.8,
         }
+      )
+
+      .fromTo(
+        flashRef.current,
+        {
+          opacity: 0,
+          clipPath: 'inset(100% 0 0 0)',
+        },
+        {
+          opacity: 1,
+          clipPath: 'inset(0% 0 0 0)',
+          duration: 0.5,
+          ease: 'power2.out',
+        },
+        '<'
+      )
+      .fromTo(
+        myPhotoContainerRef.current,
+        {
+          opacity: 0,
+          clipPath: 'inset(100% 0 0 0)',
+        },
+        {
+          opacity: 1,
+          clipPath: 'inset(0% 0 0 0)',
+          duration: 1,
+        },
+        '<'
       );
 
     gsap.to(flashRef.current, {
@@ -268,46 +264,48 @@ export default function HeroSection() {
   return (
     <HeroSectionStyles>
       <div>
-        <div className='textContainer'>
-          <h1 ref={headerRef}>Front-End Developer</h1>
+        <div className='mainContainer'>
+          <div className='textContainer'>
+            <h1 ref={headerRef}>Front-End Developer</h1>
 
-          <span className='locationContainer'>
-            <p ref={locationTextRef}>Vilnius, Lithuania</p>
-            <img src={location} ref={pinRef} alt='Location pin svg' />
-          </span>
-          <div className='paragraphBox'>
-            <img ref={leftBracketRef} src={sign} alt='Bracket' />
-            <p ref={paragraphRef}>
-              Hi, I'm a passionate front-end developer who specializes in
-              utilizing React to create dynamic and user-friendly web
-              applications. With a strong focus on modern web technologies and a
-              keen eye for design.
-            </p>
-            <img ref={rightBracketRef} src={sign} alt='Bracket' />
+            <span className='locationContainer'>
+              <h2 ref={locationTextRef}>Vilnius, Lithuania</h2>
+              <img src={location} ref={pinRef} alt='Location pin svg' />
+            </span>
+            <div className='paragraphBox'>
+              <img ref={leftBracketRef} src={sign} alt='Bracket' />
+              <p ref={paragraphRef}>
+                Hi, I'm a passionate front-end developer who specializes in
+                utilizing React to create dynamic and user-friendly web
+                applications. With a strong focus on modern web technologies and
+                a keen eye for design.
+              </p>
+              <img ref={rightBracketRef} src={sign} alt='Bracket' />
+            </div>
+
+            <span className='socialContainer'>
+              <a
+                href='https://www.linkedin.com/in/arvydas-pe%C4%8Diulis-2a7560213/'
+                target='_blank'
+                onMouseEnter={handleMouseEnterLinkedIn}
+                onMouseLeave={handleMouseLeaveLinkedIn}
+              >
+                <img ref={linkedInRef} src={linkedin} alt='LinkedIn svg' />
+                <div ref={linkWrapperRef} id='linkedInHover'></div>
+              </a>
+              <a
+                href='https://github.com/transparentCamel'
+                target='_blank'
+                onMouseEnter={handleMouseEnterGit}
+                onMouseLeave={handleMouseLeaveGit}
+              >
+                <img ref={githubRef} src={github} alt='GitHub svg' />
+                <div ref={gitRef} id='gitHover'></div>
+              </a>
+            </span>
           </div>
-
-          <span>
-            <a
-              href='https://www.linkedin.com/in/arvydas-pe%C4%8Diulis-2a7560213/'
-              target='_blank'
-              onMouseEnter={handleMouseEnterLinkedIn}
-              onMouseLeave={handleMouseLeaveLinkedIn}
-            >
-              <img ref={linkedInRef} src={linkedin} alt='LinkedIn svg' />
-              <div ref={linkWrapperRef} id='linkedInHover'></div>
-            </a>
-            <a
-              href='https://github.com/transparentCamel'
-              target='_blank'
-              onMouseEnter={handleMouseEnterGit}
-              onMouseLeave={handleMouseLeaveGit}
-            >
-              <img ref={githubRef} src={github} alt='GitHub svg' />
-              <div ref={gitRef} id='gitHover'></div>
-            </a>
-          </span>
           <div className='skillsContainer'>
-            <p ref={techTextRef}>Tech Stack</p>
+            <h2 ref={techTextRef}>Tech Stack</h2>
 
             <div ref={lineRef} id='line'></div>
 
@@ -336,9 +334,9 @@ export default function HeroSection() {
             </ul>
           </div>
         </div>
-        <div className='heroImageContainer'>
+        <div ref={myPhotoRef} className='heroImageContainer'>
           <div id='myPhotoContainer' ref={myPhotoContainerRef}>
-            <img ref={myPhotoRef} src={myPhoto} alt='Photo of me' />
+            <img src={myPhoto} alt='Photo of me' />
           </div>
           <div className='flashContainer' ref={flashRef}>
             <div className='trapezoidContainer'>
