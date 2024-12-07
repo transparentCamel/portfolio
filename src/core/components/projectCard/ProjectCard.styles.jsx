@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const ProjectCardStyles = styled.div`
-  padding: 16px;
+  padding: 16px 32px;
   border-radius: 32px;
   background-color: #ffff;
   box-shadow: 0px 0px 8px #e5e4e2;
@@ -9,10 +9,11 @@ export const ProjectCardStyles = styled.div`
   gap: 32px;
   flex-direction: row;
   align-items: center;
+  max-width: 1280px;
 
   .cardImgContainer {
     width: 50%;
-    max-height: 256px;
+    max-height: 384px;
     overflow: hidden;
     position: relative;
     border-radius: 16px;

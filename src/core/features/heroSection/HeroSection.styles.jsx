@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 
 export const HeroSectionStyles = styled.section`
-  padding: 96px 256px;
+  padding: 128px 256px;
   background-color: #f5f5f5;
-  height: 1024px;
+
   @media screen and (max-width: 1740px) {
     padding: 96px 128px;
   }
   @media screen and (max-width: 1366px) {
-    padding: 96px 64px;
+    padding: 64px 64px;
     height: auto;
   }
 
@@ -199,7 +199,7 @@ export const HeroSectionStyles = styled.section`
         }
       }
       #myPhotoContainer,
-      #myPhotoContainer img {
+      #myPhotoContainer #myPhoto {
         box-sizing: border-box;
       }
 
@@ -208,11 +208,22 @@ export const HeroSectionStyles = styled.section`
         border: 4px solid #2d2e32;
 
         overflow: hidden;
-        img {
-          border: 4px solid #2d2e32;
-          width: 100%;
-
-          object-fit: cover;
+        #photoCOntainerChild {
+          position: relative;
+          overflow: hidden;
+          .waves {
+            position: absolute;
+            width: 512px;
+            height: 384px;
+            top: 128px;
+          }
+          #myPhoto {
+            border: 4px solid #2d2e32;
+            width: 100%;
+            overflow: hidden;
+            object-fit: cover;
+            z-index: 2;
+          }
         }
       }
     }

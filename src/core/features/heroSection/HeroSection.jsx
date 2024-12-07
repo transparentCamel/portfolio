@@ -3,16 +3,17 @@ import { HeroSectionStyles } from './HeroSection.styles';
 import linkedin from '../../../assets/svg/square-linkedin.svg';
 import github from '../../../assets/svg/square-github.svg';
 import myPhoto from '../../../assets/images/MyPicture.png';
-import htmlLogo from '../../../assets/svg/html5.svg';
-import cssLogo from '../../../assets/svg/css3.svg';
 import sass from '../../../assets/svg/sass.svg';
 import react from '../../../assets/svg/react.svg';
+import nextLogo from '../../../assets/svg/next-js.svg';
+import tsLogo from '../../../assets/svg/typescript.svg';
 import node from '../../../assets/svg/node.svg';
 import location from '../../../assets/svg/location.svg';
 import tailwindIcon from '../../../assets/svg/tailwind-css.svg';
 import sign from '../../../assets/svg/less-than.svg';
 import polaroid from '../../../assets/images/polaroidTop.png';
 import gsapIcon from '../../../assets/svg/GSAP.svg';
+
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import { gsap } from 'gsap';
@@ -35,6 +36,7 @@ export default function HeroSection() {
   const linkWrapperRef = useRef();
   const gitRef = useRef();
   const flashRef = useRef();
+
   const [animationFinished, setAnimationFinished] = useState(false);
 
   useEffect(() => {
@@ -203,6 +205,7 @@ export default function HeroSection() {
         },
         '<'
       )
+
       .fromTo(
         myPhotoContainerRef.current,
         {
@@ -311,10 +314,10 @@ export default function HeroSection() {
 
             <ul ref={iconContainerRef}>
               <li>
-                <img src={htmlLogo} alt='Html5 Logo' />
+                <img src={tsLogo} alt='TS Logo' />
               </li>
               <li>
-                <img src={cssLogo} alt='CSS3 Logo' />
+                <img src={nextLogo} alt='Next Logo' />
               </li>
               <li>
                 <img src={react} alt='React Logo' />
@@ -336,7 +339,9 @@ export default function HeroSection() {
         </div>
         <div ref={myPhotoRef} className='heroImageContainer'>
           <div id='myPhotoContainer' ref={myPhotoContainerRef}>
-            <img src={myPhoto} alt='Photo of me' />
+            <div id='photoCOntainerChild'>
+              <img id='myPhoto' src={myPhoto} alt='Photo of me' />
+            </div>
           </div>
           <div className='flashContainer' ref={flashRef}>
             <div className='trapezoidContainer'>
