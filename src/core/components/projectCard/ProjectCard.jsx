@@ -13,13 +13,19 @@ export default function ProjectCard({
   linkGit,
   linkSite,
   showStyled,
+  showTailwind,
+  showSass,
+  showReact,
+  showNext,
+  showTypescript,
+  showContentful,
 }) {
   return (
     <ProjectCardStyles>
       <div
         className={`cardImgContainer ${imgPosition === 'right' ? 'right' : ''}`}
       >
-        <img src={imgSrc} alt='' />
+        <img src={imgSrc} alt='Project' />
       </div>
       <div className='cardTextContainer'>
         <header>
@@ -29,11 +35,16 @@ export default function ProjectCard({
         </header>
         <p className='paragraph'>{paragraph}</p>
         <div className='technologyContainer'>
-          <div>React.js</div>
-          {!showStyled && <div>Tailwind CSS</div>}
+          {showReact && <div>React.js</div>}
+          {showNext && <div>Next.js</div>}
+          {showTypescript && <div>Typescript</div>}
+
+          {showTailwind && <div>Tailwind CSS</div>}
           {showStyled && <div>styled-components</div>}
+          {showSass && <div>SASS</div>}
 
           {showNode && <div>Node.js</div>}
+          {showContentful && <div>Contentful CMS</div>}
         </div>
         <div className='linksContainer'>
           {linkGit && (

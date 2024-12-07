@@ -1,23 +1,21 @@
 import styled from 'styled-components';
 
 export const ContactStyles = styled.section`
-  padding: 128px 24%;
+  padding: 128px 256px;
   display: flex;
   flex-direction: column;
   gap: 16px;
   background-color: #2d2e32;
   color: #ffff;
   @media screen and (max-width: 1740px) {
-    padding: 128px 16%;
+    padding: 96px 12px;
   }
   @media screen and (max-width: 1366px) {
-    padding: 128px 12%;
+    padding: 64px 64px;
   }
-  @media screen and (max-width: 800px) {
-    padding: 128px 8%;
-  }
+
   @media screen and (max-width: 600px) {
-    padding: 64px 8%;
+    padding: 32px 32px;
   }
   h2,
   h3 {

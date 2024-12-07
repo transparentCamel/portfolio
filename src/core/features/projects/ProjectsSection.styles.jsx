@@ -1,18 +1,18 @@
 import styled from 'styled-components';
 
 export const ProjectSectionStyles = styled.section`
-  padding: 128px 24%;
+  padding: 128px 256px;
   background-color: #f5f5f5;
 
   @media screen and (max-width: 1740px) {
-    padding: 128px 16%;
+    padding: 96px 128px;
   }
   @media screen and (max-width: 1366px) {
-    padding: 128px 12%;
+    padding: 64px 64px;
   }
 
-  @media screen and (max-width: 800px) {
-    padding: 128px 8%;
+  @media screen and (max-width: 600px) {
+    padding: 32px 32px;
 
     h2,
     h3 {
@@ -31,7 +31,8 @@ export const ProjectSectionStyles = styled.section`
     display: flex;
     flex-direction: column;
     gap: 64px;
-
+    justify-items: center;
+    align-items: center;
     :first-child {
       .cardImgContainer {
         img {

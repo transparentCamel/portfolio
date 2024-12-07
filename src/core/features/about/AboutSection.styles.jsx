@@ -3,20 +3,18 @@ import styled from 'styled-components';
 export const AboutSectionStyles = styled.section`
   display: flex;
   flex-direction: row;
-  padding: 128px 24%;
+  padding: 128px 256px;
   gap: 64px;
 
   @media screen and (max-width: 1740px) {
-    padding: 128px 16%;
+    padding: 96px 128px;
   }
   @media screen and (max-width: 1366px) {
-    padding: 128px 12%;
+    padding: 64px 64px;
   }
-  @media screen and (max-width: 800px) {
-    padding: 128px 8%;
-  }
+
   @media screen and (max-width: 600px) {
-    padding: 64px 8%;
+    padding: 32px 32px;
   }
 
   .aboutImageContainer {

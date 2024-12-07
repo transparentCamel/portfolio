@@ -8,7 +8,9 @@ import diamondSvg from '../../../assets/svg/diamond.svg';
 import registrationAppImg from '../../../assets/images/registrationApp.png';
 import adressCardSvg from '../../../assets/svg/address-card-solid.svg';
 import veskIcon from '../../../assets/svg/VESKicon.svg';
+import rateIcon from '../../../assets/images/ratepunk_logo.jpg';
 import veskCapture from '../../../assets/images/veskCapture.png';
+import rateCapture from '../../../assets/images/rateCapture.png';
 export default function ProjectsSection() {
   return (
     <ProjectSectionStyles id='projects'>
@@ -18,23 +20,29 @@ export default function ProjectsSection() {
         <ProjectCard
           imgSrc={veskCapture}
           heading={'VESK'}
-          headingSmall={'{2024 September}'}
+          headingSmall={'(2024 September)'}
           icon={veskIcon}
+          showTailwind={true}
           imgPosition={'right'}
           paragraph={'A website for VESK Professional Career Center.'}
           linkSite={'https://www.vesk.lt/'}
+          showReact={true}
+          showContentful={true}
         />
         <ProjectCard
-          imgSrc={carServicesImg}
-          heading={'CAR SERVICES'}
-          headingSmall={'(Desktop only)'}
-          icon={carSvg}
-          showStyled={true}
+          imgSrc={rateCapture}
+          heading={'RatePunk'}
+          headingSmall={'(2024-01)'}
+          icon={rateIcon}
+          showSass={true}
+          showNext={true}
+          showTypescript={true}
           paragraph={
-            'Car Services website is a static platform meticulously created to mirror the exact specifications outlined in the provided Figma design.'
+            'Task from Ratepunk. Created a landing page according to figma design with email verification'
           }
-          linkGit={'https://github.com/transparentCamel/carShop'}
+          linkGit={'https://github.com/transparentCamel/ratepunk-task'}
         />
+
         <ProjectCard
           imgSrc={kryptoniteImg}
           heading={'KRYPTONITE'}
@@ -47,6 +55,20 @@ export default function ProjectsSection() {
           imgPosition={'right'}
           showNode={true}
           linkGit={'https://github.com/transparentCamel/Kryptonite'}
+          showReact={true}
+        />
+
+        <ProjectCard
+          imgSrc={carServicesImg}
+          heading={'CAR SERVICES'}
+          headingSmall={'(Desktop only)'}
+          icon={carSvg}
+          showStyled={true}
+          paragraph={
+            'Car Services website is a static platform meticulously created to mirror the exact specifications outlined in the provided Figma design.'
+          }
+          linkGit={'https://github.com/transparentCamel/carShop'}
+          showReact={true}
         />
         <ProjectCard
           imgSrc={registrationAppImg}
@@ -59,6 +81,7 @@ export default function ProjectsSection() {
           }
           showNode={true}
           linkGit={'https://github.com/transparentCamel/registration-app'}
+          showReact={true}
         />
       </div>
     </ProjectSectionStyles>
