@@ -10,6 +10,9 @@ export const ProjectCardStyles = styled.div`
   flex-direction: row;
   align-items: center;
   max-width: 1280px;
+  @media screen and (max-width: 1200px) {
+    flex-direction: column;
+  }
 
   .cardImgContainer {
     width: 50%;
@@ -20,7 +23,14 @@ export const ProjectCardStyles = styled.div`
     box-shadow: 0px 0px 8px #e5e4e2;
     flex: 1;
     cursor: none;
-
+    @media screen and (max-width: 1200px) {
+      order: 1;
+      max-height: 384px;
+      width: 100%;
+    }
+    @media screen and (max-width: 600px) {
+      max-height: 256px;
+    }
     img {
       width: 100%;
       object-fit: cover;
@@ -114,13 +124,6 @@ export const ProjectCardStyles = styled.div`
       img {
         width: 24px;
       }
-    }
-  }
-  @media screen and (max-width: 1200px) {
-    flex-direction: column;
-    .cardImgContainer {
-      order: 1;
-      max-height: 256px;
     }
   }
 `;
