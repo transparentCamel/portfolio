@@ -127,102 +127,151 @@ export const HeroSectionStyles = styled.section`
         }
       }
     }
-    .heroImageContainer {
+    .heroImageParent {
       display: flex;
-      flex-direction: column;
-      gap: 0px;
-      margin-left: auto;
-      width: 20%;
-      max-width: 384px;
-      @media screen and (max-width: 1920px) {
-        width: 100%;
-      }
+      justify-content: center; /* Centers horizontally */
+      align-items: center; /* Centers vertically */
+      width: 40%;
+      height: 100%;
       @media screen and (max-width: 1366px) {
-        margin-left: 0px;
         width: 100%;
       }
-
-      .polaroidContainer {
+      .heroImageContainer {
         display: flex;
-        align-items: center;
-        justify-content: center;
-        #polaroid {
-          width: 60%;
-          bottom: 0px;
-          z-index: 1;
+        flex-direction: column;
+        gap: 0px;
+        justify-items: center;
+        width: 100%;
+        max-width: 384px;
+        @media screen and (max-width: 600px) {
+          max-width: 256px;
         }
-      }
 
-      .flashContainer {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        @media screen and (max-width: 1366px) {
-          width: 100%;
-        }
-        .trapezoidContainer {
-          margin-top: 32px;
-          border-radius: 100%;
-          overflow: hidden;
-          width: 60%;
+        .polaroidContainer {
           display: flex;
-          flex-direction: row;
-          gap: 0px;
-          height: 256px;
-          .trapezoid {
-            height: 100%;
-            width: 100%;
-          }
-
-          #trapezoidOne {
-            background-color: #2ea9e0;
-            clip-path: polygon(0 0, 20% 0, 100% 100%, 80% 100%);
-          }
-
-          #trapezoidTwo {
-            background-color: #a1c935;
-            clip-path: polygon(20% 0, 40% 0, 80% 100%, 60% 100%);
-          }
-          #trapezoidThree {
-            background-color: #ffff00;
-            clip-path: polygon(40% 0, 60% 0, 60% 100%, 40% 100%);
-          }
-          #trapezoidFour {
-            background-color: #ff6201;
-            clip-path: polygon(60% 0, 80% 0, 40% 100%, 20% 100%);
-          }
-
-          #trapezoidFive {
-            background-color: #ec539f;
-            clip-path: polygon(80% 0, 100% 0%, 20% 100%, 0% 100%);
+          align-items: center;
+          justify-content: center;
+          #polaroid {
+            width: 60%;
+            bottom: 0px;
+            z-index: 1;
           }
         }
-      }
-      #myPhotoContainer,
-      #myPhotoContainer #myPhoto {
-        box-sizing: border-box;
-      }
 
-      #myPhotoContainer {
-        padding: 24px 24px 64px 24px;
-        border: 4px solid #2d2e32;
-
-        overflow: hidden;
-        #photoCOntainerChild {
-          position: relative;
-          overflow: hidden;
-          .waves {
-            position: absolute;
-            width: 512px;
-            height: 384px;
-            top: 128px;
-          }
-          #myPhoto {
-            border: 4px solid #2d2e32;
+        .flashContainer {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          @media screen and (max-width: 1366px) {
             width: 100%;
+          }
+          .trapezoidContainer {
+            margin-top: 32px;
+            border-radius: 100%;
             overflow: hidden;
-            object-fit: cover;
-            z-index: 2;
+            width: 60%;
+            display: flex;
+            flex-direction: row;
+            gap: 0px;
+            height: 256px;
+            .trapezoid {
+              height: 100%;
+              width: 100%;
+            }
+
+            #trapezoidOne {
+              background-color: #2ea9e0;
+              clip-path: polygon(0 0, 20% 0, 100% 100%, 80% 100%);
+            }
+
+            #trapezoidTwo {
+              background-color: #a1c935;
+              clip-path: polygon(20% 0, 40% 0, 80% 100%, 60% 100%);
+            }
+            #trapezoidThree {
+              background-color: #ffff00;
+              clip-path: polygon(40% 0, 60% 0, 60% 100%, 40% 100%);
+            }
+            #trapezoidFour {
+              background-color: #ff6201;
+              clip-path: polygon(60% 0, 80% 0, 40% 100%, 20% 100%);
+            }
+
+            #trapezoidFive {
+              background-color: #ec539f;
+              clip-path: polygon(80% 0, 100% 0%, 20% 100%, 0% 100%);
+            }
+          }
+        }
+        #myPhotoContainer,
+        #myPhotoContainer #myPhoto {
+          box-sizing: border-box;
+        }
+
+        #myPhotoContainer {
+          padding: 24px 24px 64px 24px;
+          border: 4px solid #2d2e32;
+          overflow: hidden;
+          @media screen and (max-width: 600px) {
+            padding: 16px 16px 32px 16px;
+          }
+          #photoCOntainerChild {
+            position: relative;
+            overflow: hidden;
+
+            #myPhoto {
+              border: 4px solid #2d2e32;
+              width: 100%;
+              overflow: hidden;
+              object-fit: cover;
+              z-index: 3;
+            }
+            #wave {
+              position: absolute;
+              top: 256px;
+              z-index: 2;
+              @media screen and (max-width: 600px) {
+                top: 160px;
+              }
+            }
+            #sunContainer {
+              position: absolute;
+              display: flex;
+              align-items: center;
+              justify-items: center;
+              right: 32px;
+              top: 32px;
+              width: fit-content;
+              height: fit-content;
+              z-index: 1;
+              @media screen and (max-width: 600px) {
+                right: 24px;
+                top: 24px;
+              }
+
+              #circle {
+                position: relative;
+                width: 64px;
+                height: 64px;
+                border-radius: 100%;
+                box-shadow: 0 0 10px 5px rgba(255, 90, 0);
+                z-index: 1;
+                @media screen and (max-width: 600px) {
+                  width: 32px;
+                  height: 32px;
+                }
+
+                #sun {
+                  position: absolute;
+                  width: 64px;
+                  z-index: 2;
+                  @media screen and (max-width: 600px) {
+                    width: 32px;
+                    height: 32px;
+                  }
+                }
+              }
+            }
           }
         }
       }
