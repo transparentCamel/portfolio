@@ -13,9 +13,8 @@ import tailwindIcon from '../../../assets/svg/tailwind-css.svg';
 import sign from '../../../assets/svg/less-than.svg';
 import polaroid from '../../../assets/images/polaroidTop.png';
 import gsapIcon from '../../../assets/svg/GSAP.svg';
-
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
+import wave from '../../../assets/svg/wave.svg';
+import sun from '../../../assets/svg/sun.svg';
 import { gsap } from 'gsap';
 
 export default function HeroSection() {
@@ -36,12 +35,14 @@ export default function HeroSection() {
   const linkWrapperRef = useRef();
   const gitRef = useRef();
   const flashRef = useRef();
+  const sunRef = useRef();
+
+  const sunContainerRef = useRef();
 
   const [animationFinished, setAnimationFinished] = useState(false);
 
   useEffect(() => {
     const tl = gsap.timeline();
-    gsap.registerPlugin(ScrollTrigger);
 
     gsap.set([linkWrapperRef.current, gitRef.current], {
       clipPath: 'inset(100% 0 0 0)',
@@ -218,7 +219,24 @@ export default function HeroSection() {
           duration: 1,
         },
         '<'
+      )
+      .fromTo(
+        sunContainerRef.current,
+        {
+          y: 512,
+        },
+        {
+          y: 0,
+          duration: 1,
+        }
       );
+
+    gsap.to(sunRef.current, {
+      rotation: '+=360',
+      duration: 6,
+      repeat: -1,
+      ease: 'linear',
+    });
 
     gsap.to(flashRef.current, {
       opacity: 0.8,
@@ -337,28 +355,36 @@ export default function HeroSection() {
             </ul>
           </div>
         </div>
-        <div ref={myPhotoRef} className='heroImageContainer'>
-          <div id='myPhotoContainer' ref={myPhotoContainerRef}>
-            <div id='photoCOntainerChild'>
-              <img id='myPhoto' src={myPhoto} alt='Photo of me' />
+        <div className='heroImageParent'>
+          <div ref={myPhotoRef} className='heroImageContainer'>
+            <div id='myPhotoContainer' ref={myPhotoContainerRef}>
+              <div id='photoCOntainerChild'>
+                <img id='myPhoto' src={myPhoto} alt='Photo of me' />
+                <img src={wave} alt='Wave' id='wave' />
+                <div id='sunContainer' ref={sunContainerRef}>
+                  <div id='circle'>
+                    <img src={sun} alt='Sun' id='sun' ref={sunRef} />
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-          <div className='flashContainer' ref={flashRef}>
-            <div className='trapezoidContainer'>
-              <div id='trapezoidOne' className='trapezoid'></div>
-              <div id='trapezoidTwo' className='trapezoid'></div>
-              <div id='trapezoidThree' className='trapezoid'></div>
-              <div id='trapezoidFour' className='trapezoid'></div>
-              <div id='trapezoidFive' className='trapezoid'></div>
+            <div className='flashContainer' ref={flashRef}>
+              <div className='trapezoidContainer'>
+                <div id='trapezoidOne' className='trapezoid'></div>
+                <div id='trapezoidTwo' className='trapezoid'></div>
+                <div id='trapezoidThree' className='trapezoid'></div>
+                <div id='trapezoidFour' className='trapezoid'></div>
+                <div id='trapezoidFive' className='trapezoid'></div>
+              </div>
             </div>
-          </div>
-          <div className='polaroidContainer'>
-            <img
-              id='polaroid'
-              ref={polaroidRef}
-              src={polaroid}
-              alt='Polaroid Camera'
-            />
+            <div className='polaroidContainer'>
+              <img
+                id='polaroid'
+                ref={polaroidRef}
+                src={polaroid}
+                alt='Polaroid Camera'
+              />
+            </div>
           </div>
         </div>
       </div>
