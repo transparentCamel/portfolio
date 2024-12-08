@@ -8,7 +8,7 @@ export const ContactStyles = styled.section`
   background-color: #2d2e32;
   color: #ffff;
   @media screen and (max-width: 1740px) {
-    padding: 96px 12px;
+    padding: 96px 128px;
   }
   @media screen and (max-width: 1366px) {
     padding: 64px 64px;
