@@ -219,6 +219,14 @@ export const HeroSectionStyles = styled.section`
             position: relative;
             overflow: hidden;
 
+            #imgBackground {
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              background-color: #f9f6ee;
+              z-index: 0;
+            }
+
             #myPhoto {
               border: 4px solid #2d2e32;
               width: 100%;

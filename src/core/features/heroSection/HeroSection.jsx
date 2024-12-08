@@ -366,6 +366,7 @@ export default function HeroSection() {
                     <img src={sun} alt='Sun' id='sun' ref={sunRef} />
                   </div>
                 </div>
+                <div id='imgBackground'></div>
               </div>
             </div>
             <div className='flashContainer' ref={flashRef}>
